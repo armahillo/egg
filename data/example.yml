@@ -1,0 +1,19 @@
+# NAME TK EXAMPLE
+# Exported:
+# Printed: 
+---
+metadata:
+  version: 0.0.0
+  reusable_data: &full_entry_key
+    entry: &entry
+    - reusable data entry
+config:
+  styles:
+    a_style: ''
+cards:
+  - name: card name
+    data_1: *entry
+    data_2:
+      *entry
+    data_3:
+      <<: *full_entry_key

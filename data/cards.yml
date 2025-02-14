@@ -1,0 +1,593 @@
+# Cards
+# Exported:
+# Printed:
+---
+metadata:
+  version: 0.4.0
+  unused:
+  - When you attack, you may discard a RESERVE card at random, the attack is treated as that type.
+  - When you take this, you may swap it with the WATER card in the VENUE.
+  - When you BLOCK, your opponent must give you any one card from their RESERVES; add it to your RESERVES.
+  - At any time, you may discard a card from your RESERVES; your opponent must show you their DUEL card for that element.
+  - Your opponent additionally discards all of the lowest element they have in reserve.
+  - Nagamaki # https://en.wikipedia.org/wiki/Nagamaki
+  linting:
+    earth: # 🌲🌲🌲 # 5 weapon, 0 technique, 2 stance, 1 reaction, 2 action
+      weapon: 5
+      stance: 2
+      technique: 0
+      action: 2
+      reaction: 1
+    water: # 💧💧💧 # 5 Stance, 2 reaction, 2 weapon, 1 technique, 0 action
+      weapon: 2
+      stance: 5
+      technique: 1
+      action: 0
+      reaction: 2
+    fire: # 🔥🔥🔥 # 5 Action, 2 Technique, 2 Weapon, 1 Stance, 0 Reaction
+      weapon: 2
+      stance: 1
+      technique: 2
+      action: 5
+      reaction: 0
+    air: # 💨💨💨 # 5 Technique, 2 Reaction, 2 Action, 1 Weapon, 0 Stance
+      weapon: 1
+      stance: 0
+      technique: 5
+      action: 2
+      reaction: 2
+    void: # 🕳️🕳️🕳️ # 5 Reaction, 2 Technique, 2 Stance, 1 Action, 0 Weapon
+      weapon: 0
+      stance: 2
+      technique: 2
+      action: 1
+      reaction: 5
+config:
+  styles:
+    earth:
+      duel_type_style:
+      - "background: #5e2200ff"
+      - "color: white"
+      card_back_type_style:
+      - "color: white"
+    water:
+      duel_type_style:
+      - "background: #0b57a5ff"
+      - "color: white"
+      card_back_type_style:
+      - "color: white"
+    fire:
+      duel_type_style:
+      - "background: #f9a54dff"
+      - "color: black"
+      card_back_type_style:
+      - "color: black"
+    air:
+      duel_type_style:
+      - "background: #ebf4f9ff"
+      - "color: black"
+      card_back_type_style:
+      - "color: black"
+    void:
+      duel_type_style:
+      - "background: #42147dff"
+      - "color: white"
+      card_back_type_style:
+      - "color: white"
+cards:
+  earth: # 🌲🌲🌲 # 5 weapon, 0 technique, 2 stance, 1 reaction, 2 action
+  - venue:
+      name: Uneven rocky ground
+      effect: Players must additionally discard any card from reserves when using DODGE or DIVE.
+    training:
+      name: Everything is difficult at first
+      effect:
+    duel:
+      name: Naginata
+      type: WEAPON | 2HANDED | POLEARM | BLADED | LARGE
+      text: When defending, you may SHEATHE this weapon instead of dropping it to DODGE.
+  - venue:
+      name: Stony ground
+      effect: Players must additionally discard a card from reserves when using DIVE.
+    duel:
+      name: To hold down a pillow
+      type: STANCE
+      text: When using a weapon with REACH, if you BLOCK you may immediately RIPOSTE.
+    duel:
+      name: Red Leaves Cut
+      type: TECHNIQUE
+      text: When your opponent uses PARRY, they must also SHEATHE one weapon.
+  - venue:
+      name: Damp stony ground
+      effect: Players must additionally discard a card from reserves when using DODGE.
+    training:
+      name: The Body in Place of the Long Sword
+      effect: (this was a duel effect orig.)
+      # type: STANCE
+      # text:
+    duel:
+      name: To soak in
+      type: TECHNIQUE
+      text: When you EVADE, you become the aggressor.
+  - venue:
+      name: Grass
+      effect: '-'
+    training:
+      name: You must do sufficient research.
+      effect: Take two additional cards from the TRAINING POOL. Your opponent takes the remainder.
+    training:
+      name: Immature strategy is the cause of grief
+      effect: Choose one card in the training pool, it is removed from play.
+  - venue:
+      name: Flat stone surface
+      effect: '-'
+    training:
+      name: when you close with the enemy, to strive with him for superior height
+      effect:
+    duel:
+      name: The Body Strike
+      type: REACTION - You just RIPOSTED
+      text: Your opponent may only DIVE to respond to this RIPOSTE
+  - venue:
+      name: Tall grass
+      effect: Players must additionally discard any card from reserves when attacking with SWORDS.
+    training:
+      name: The Way of the carpenter is to become proficient in the use of his tools
+      effect: When you take this, your opponent chooses one additional card from the TRAINING POOL to add to your reserves.
+    duel:
+      name: Kama
+      type: WEAPON | BLADED
+      text: Your opponent may not EVADE by DODGING.
+  - venue:
+      name: A few inches of water
+      effect: '-'
+    training:
+      name: It is difficult to know yourself if you do not know others.
+      effect:
+    duel:
+      name: Water adopts the shape of its receptacle.
+      type: STANCE
+      text: When you DIVE, you become the aggressor.
+  - venue:
+      name: Gravel
+      effect: '-'
+    training:
+      name: Polish the twofold spirit heart and mind, and sharpen the twofold gaze perception and sight.
+      effect:
+    duel:
+      name: Wakizashi
+      type: WEAPON | SMALL | BLADED
+      text: 1H - When you BLOCK, if you have two WEAPONs drawn, you may PARRY by discarding 1 reserve card of the same element.
+  - venue:
+      name: Loose soil ground
+      effect: After using DIVE, a player may discard an EARTH card to become the aggressor.
+    training:
+      name: Become acquainted with every art
+      effect: Choose TECHNIQUE or STANCE; take all of those from the TRAIING POOL.
+    duel:
+      name: Pay attention even to trifles.
+      type: ACTION
+      text: Choose one facedown card, anywhere and name it. If you named correctly, it is discarded.
+  - venue:
+      name: Packed soil ground
+      effect: '-'
+    training:
+      name: The spirit of stickiness is not hitting very strongly, but hitting so that the swords do not separate easily.
+      effect: formerly duel tech.
+      #type: TECHNIQUE
+      #text: Anytime your opponent discards one or more cards, you may choose one to replace one of your RESERVE cards.
+    duel:
+      name: Glue and Lacquer Emulsion Body
+      type: STANCE
+      text: Your opponent's weapons do not have REACH.
+  water: # 💧💧💧 # 5 Stance, 2 reaction, 2 weapon, 1 technique, 0 action
+  - venue:
+      name: Heavily snowing
+      effect: Defending against POLEARM and REACH weapons requires discarding an additional card from reserves.
+    training:
+      name: If you fix your eyes on details and neglect important things, your spirit will be bewildered #, and victory will escape you.
+      effect: When you take this, flip all remaining TRAINING POOL cards facedown for the rest of this training day.
+    duel:
+      name: To Stab at the Face
+      type: ACTION
+      text:
+  - venue:
+      name: Snowing
+      effect: If you additionally discard a WATER card while using BLOCK, you PARRY instead.
+    training:
+      name: Study fully other martial arts and do not deviate even a little from the Way of the warrior.
+      effect: Choose WEAPON, TECHNIQUE, or STANCE and take all of those cards from the TRAINING POOL. Your opponent takes the remainder.
+    duel:
+      name: Kusarigama
+      type: WEAPON | 2HANDED | BLADED | REACH
+      text: You may RIPOSTE after DODGE or DIVE. Your opponent may not use BLOCK.
+  - venue:
+      name: Dry
+      effect: '-'
+    training:
+      name: Be neither insufficiently spirited nor over spirited.
+      effect: Exchange one card in your RESERVES with one card in the TRAINING POOL.
+    duel:
+      name: Fire and Stones Cut
+      type: TECHNIQUE
+      text: When you PARRY, RIPOSTE
+  - venue:
+      name: Light showers
+      effect: '-'
+    training:
+      name: Whatever you do, you must drive the enemy together, as if tying a line of fishes
+      effect: You choose which card your opponent selects next from the TRAINING POOL.
+    duel:
+      name: Flowing Water Cut
+      type: STANCE
+      text: When you DODGE, you become the aggressor.
+  - venue:
+      name: Cloudy
+      effect: '-'
+    training:
+      name: An elevated spirit is weak and a low spirit is weak.
+      effect: Skip your next turn and go twice after your opponent does. (They go twice, you go twice)
+    duel:
+      name: You must win by seizing upon the enemy's disorder and derangement
+      type: REACTION - Opponent EVADES (DIVE)
+      text: Make an immediate followup attack of the same type.
+  - venue:
+      name: Foggy
+      effect: No one can RIPOSTE.
+    training:
+      name: Perceive those things which cannot be seen.
+      effect: You may peek at one of the cards in the opponent's Duel spread or in the Duel Venue.
+    duel:
+      name: In strategy, we cannot say what is concealed and what is revealed.
+      type: ACTION
+      text: Replace this card with a one from your RESERVES, facedown.
+  - venue:
+      name: Clear
+      effect: '-'
+    training:
+      name: When your opponent is hurrying recklessly, you must act contrarily and keep calm.
+      effect: Your opponent must immediately add a card from their RESERVES to their DUEL SPREAD, if possible.
+    duel:
+      name: Tai No Sen (Waiting for Initiative)
+      type: TECHNIQUE
+      text: Now, and anytime you WAIT, you may RIPOSTE after DODGING.
+  - venue:
+      name: Hazy
+      effect: '-'
+    training:
+      name: Strategy is the craft of the warrior
+      effect: You may exchange one of your selected DUEL cards with a card from your RESERVE.
+    duel:
+      name: The primary thing is not to let him recover his position even a little.
+      type: REACTION - Opponent DEFENDS (PARRY)
+      text: You RIPOSTE and remain the aggressor.
+  - venue:
+      name: Clear
+      effect: '-'
+    training:
+      name: To all Ways there are sidetracks
+      effect:
+    duel:
+      name: When it is difficult to cut an enemy down with one hand, you must use both hands.
+      # effect: Choose another card from the TRAINING POOL, perform its action, and add it to your RESERVES.
+      type:
+      text: formerly training
+  - venue:
+      name: Raining
+      effect: Players must discard an additional card from reserves to RIPOSTE.
+    training:
+      name: Water is sometimes a trickle and sometimes a wild sea
+      effect: The remaining TRAINING POOL cards are shuffled arranged into a single pile and chosen from the top only.
+    duel:
+      name: Treading down the sword
+      type: REACTION - Opponent WAITs
+      text: RIPOSTE; The opponent may not respond by PARRYing. You remain the aggressor.
+  fire: # 🔥🔥🔥 # 5 Action, 2 Technique, 2 Weapon, 1 Stance, 0 Reaction
+  - venue:
+      name: Dawn
+      effect:
+    duel:
+      name: Ken No Sen (Attacking)
+      type: ACTION
+      text: Force your opponent to discard a STANCE
+    training:
+      name: Develop an intuitive judgement and understanding for everything.
+      effect: Your opponent divides the remaining cards in the TRAINING POOL into two piles. You choose who gets which pile (do not perform their TRAINING actions).
+  - venue:
+      name: Early morning
+      effect:
+    training:
+      name: Really skilful people never get out of time, and are always deliberate
+      effect:
+    duel:
+      name: Make a show of complete calmness, and the enemy will be taken by this and will become relaxed.
+      effect: Attack with your DRAWN weapon. Your opponent may only EVADE this attack.
+  - venue:
+      name: Noon
+      effect:
+    training:
+      name: Even when your spirit is calm do not let your body relax
+      effect:
+    duel:
+      name: Use a timing which the enemy does not expect.
+      type: ACTION
+      text:
+  - venue:
+      name: Golden Hour
+      effect:
+    training:
+      name: In all skills and abilities there is timing.
+      effect:
+    duel:
+      name: Abdomen Timing of Two
+      type: ACTION
+      text: Discard any two reserve cards to make two immediate additional attacks of those types.
+  - venue:
+      name: Sundown
+      effect:
+    training:
+      name: There may be no help but to do something twice
+      effect: When you take this, you may add one card from the TRAINING POOL directly to your DUEL spread, facedown.
+    duel:
+      name: 
+      type: ACTION
+      text: Reveal a second 1H weapon and immediately attack with each, then SHEATHE that weapon.
+  - venue:
+      name: Dusk
+      effect:
+    duel:
+      name: Do not accord your opponent even a little hope of recovery
+      type: REACTION - Opponent has just discarded from reserves
+      text: Take a card the opponent just discarded and replace this with it.
+    duel:
+      name: Feinting defense
+      type: TECHNIQUE
+      text: When you defend an attack, you can RIPOSTE when matching, instead of exceeding, the type of attack.
+  - venue:
+      name: Twilight
+      effect:
+    training:
+      name: Know the Ways of all professions.
+      effect: You may ask your opponent how many cards of any element are in their reserves.
+    duel:
+      name: Kaiken
+      type: WEAPON | SMALL | BLADED | 1H
+      text: When you discard this to DODGE or DIVE, you may reveal and RIPOSTE with it.
+  - venue:
+      name: Full Moon
+      effect:
+    training:
+      name: There are various Ways
+      effect: Give your opponent any number of cards from your RESERVE. Take that many cards from the TRAINING POOL.
+    duel:
+      name: Katana
+      type: WEAPON | BLADED | 2HANDED
+      text:
+  - venue:
+      name: Crescent Moon
+      effect:
+    training:
+      name: Whenever we become preoccupied with small detail, we must suddenly change into a large spirit
+      effect:
+    duel:
+      name: Nodachi
+      type: WEAPON | BLADED | 2HANDED | LARGE
+      text: 2H - Opponents cannot use BLOCK or DIVE when you ATTACK with this. If you would SHEATHE it, discard it.
+  - venue:
+      name: Half Moon
+      effect:
+    training:
+      name: A warrior carries two swords at his belt
+      effect: When you take this, you may also take a 1H weapon from the TRAINING POOL.
+    duel:
+      name: Ni-ten ichi-ryu
+      type: STANCE
+      text: All weapons are considered one handed for you.
+  air: # 💨💨💨 # 5 Technique, 2 Reaction, 2 Action, 1 Weapon, 0 Stance
+  - venue:
+      name: A confined space indoors
+      effect: LARGE weapons cannot be used.
+    training:
+      name: You must appreciate that spirit can become big or small.
+      effect:
+    duel:
+      name: Chinese Monkey's Body
+      type: STANCE
+      text:
+  - venue:
+      name: A training hall
+      effect: BLADED weapons may not be used.
+    training:
+      name: You must practice constantly
+      effect: In addition to this card, take any TECHNIQUE from the TRAINING POOL.
+    duel:
+      name: Bokken
+      type: WEAPON | 2HANDED | SWORD | WOODEN
+      text: Your opponent may BLOCK unarmed by discarding a reserve card of any type.
+  - venue:
+      name: A courtyard
+      effect: Players may only initiate the duel Formally.
+    training:
+      name: There is the spirit of winning without a sword.
+      effect:
+    duel:
+      name: To Scold "Tut-TUT!"
+      type: TECHNIQUE
+      text: If your opponent would RIPOSTE you, you RIPOSTE them first.
+  - venue:
+      name: An orchard
+      effect:
+    training:
+      name: The way of the farmer
+      effect: You may look at any facedown VENUE card.
+    duel:
+      name: The strategist makes small things into big things
+      type: STANCE
+      text: When you use flip this facedown to BLOCK, you may reveal a different STANCE.
+  - venue:
+      name: A large garden
+      effect:
+    training:
+      name: You must cultivate your wisdom and spirit.
+      effect:
+    duel:
+      name: Tai Tai No Sen (Accompanying and Forestalling)
+      type: TECHNIQUE
+      text: When you PARRY you may also RIPOSTE with the element you discarded.
+  - venue:
+      name: A bamboo forest
+      effect:
+    training:
+      name: From one thing, know ten thousand things
+      effect: Show one reserve card to your opponent. They must show you all their reserve cards of that type.
+    duel:
+      name: Do not let the enemy see your spirit.
+      type: STANCE
+      effect: (formerly training)
+      # When you take this, choose any DUEL card and return it to the TRAINING POOL, face-up.
+  - venue:
+      name: A sparse forest
+      effect:
+    training:
+      name: You should be determined though calm.
+      effect:
+    duel:
+      name: STAFF
+      type: WEAPON | 2HANDED | POLEARM | WOODEN | LARGE
+      text: (formerly yari)
+  - venue:
+      name: The base of a mountain
+      effect:
+    training:
+      name: Know the smallest things and the biggest things.
+      effect: Your opponent must show you all WEAPONs they have in their Duel spread. They remain facedown.
+    duel:
+      name: In large-scale strategy the area to watch is the enemy's strength.
+      type:
+      text: formerly training
+      # effect: When you take this, you may exchange any VENUE card with a matching card in the TRAINING POOL.
+  - venue:
+      name: A beach
+      effect: If a card would be discarded to reserves during the duel, it is removed from play instead.
+    training:
+      name: All things entail rising and falling timing.
+      effect: formerly duel tech
+      #type: STANCE
+      #text: Anytime you become the aggressor, RIPOSTE immediately if you have a DRAWN weapon.
+    duel:
+      name: An actual oar
+      type: WEAPON | 2HANDED | SWORD | WOODEN
+      text:
+  - venue:
+      name: An open field
+      effect: Anyone may DODGE by discarding any 1 reserve card.
+    training:
+      name: If a gentleman dislikes strategy, he will not appreciate the benefit of weaponry.
+      effect: When you take this, you may take also take a TECHNIQUE card from the pool.
+    duel:
+      name: Empty Hand
+      type: TECHNIQUE
+      text: While you have no WEAPON faceup, you become the aggressor after any DEFEND or EVADE response.
+  void: # 🕳️🕳️🕳️ # 5 Reaction, 2 Technique, 2 Stance, 1 Action, 0 Weapon
+  - venue:
+      name:
+      effect:
+    duel:
+      name: Distinguish between gain and loss in worldly matters.
+      type: ACTION
+      text: Replace this card with any WEAPON in the discard.
+    duel:
+      name: Do nothing which is of no use.
+      type: REACTION - You DEFEND or EVADE
+      text: "You may secretly choose a card you just discarded while DEFENDING and add facedown to your Duel Spread."
+  - venue:
+      name:
+      effect:
+    training:
+      name: If you mistake the Way even a little you will become bewildered and fall into bad ways
+      effect:
+    duel:
+      name: Continuous Cut
+      type: REACTION - You DEFEND (PARRY)
+      text: "RIPOSTE. The opponent may only DODGE this by discarding twice as many reserve cards as they would normally."
+  - venue:
+      name:
+      effect:
+    training:
+      name: Until you realize the true Way, you may think that things are correct and in order. 
+      effect: 
+    duel:
+      name: In-one Timing
+      type: REACTION - You EVADE
+      text: "RIPOSTE with the highest element that was discarded. Become the aggressor."
+  - venue:
+      name:
+      effect:
+    training:
+      name: With your spirit open and unconstricted, look at things from a high point of view.
+      effect: When you take this, take a second card from the TRAINING POOL, then the opponent takes an additional one.
+    duel:
+      name: The Way of the warrior is resolute acceptance of death
+      type: REACTION - You YIELD
+      text: The duel does not end because you just YIELDED. You become the aggressor.
+  - venue:
+      name:
+      effect:
+    training:
+      name: With your spirit settled, accumulate practice day by day, and hour by hour.
+      effect: 
+    duel:
+      name: When you sacrifice your life, you must make fullest use of your weaponry.
+      type: REACTION - You DIVE, discarding a WEAPON
+      text: RIPOSTE with that weapon, then remove it from play.
+  - venue:
+      name:
+      effect:
+    training:
+      name: Remove the bad influence of other schools
+      effect: Choose WEAPON, TECHNIQUE or STANCE -- discard all cards of that type in the TRAINING POOL.
+    duel:
+      name: No Design, No Conception
+      type: TECHNIQUE
+      text:
+  - venue:
+      name:
+      effect:
+    training:
+      name: By knowing things that exist, you can know that which does not exist. 
+      effect: You may look at the 5 cards removed from play during setup.
+    duel:
+      name: Cut and Slash
+      type: ACTION
+      text:
+  - venue:
+      name:
+      effect:
+    training:
+      name: You must learn the spirit of crushing as if with a hand-grip.
+      effect:
+    duel:
+      name: Enact strategy broadly, correctly and openly.
+      type:
+      text: formerly training
+      # effect: Choose one element. Both you and your opponent discard one card of that element.
+  - venue:
+      name:
+      effect:
+    training:
+      name: Each man practices as he feels inclined
+      effect: When you take this, you may replace one of your DUEL cards with a card in your RESERVE.
+    duel:
+      name: Perception is strong and sight weak.
+      type: STANCE
+      text: Your opponent may only reveal REACTIONs unless they are the aggressor.
+  - venue:
+      name:
+      effect:
+    training:
+      name: What is called the spirit of the void is where there is nothing.
+      effect: Discard all of your DUEL SPREAD cards to your reserve.
+    duel:
+      name: We must abandon our efforts, think of the situation in a fresh spirit then win in the new rhythm. 
+      type: ACTION
+      text: Exchange any number of remaining cards in your DUEL SPREAD with cards in your RESERVES.
