@@ -12,6 +12,8 @@ end
 require 'bundler/setup'
 require 'rspec/core/rake_task'
 require './lib/core'
+require 'rake/notes/rake_task'
+
 
 desc "Run tests"
 task :spec do
@@ -35,41 +37,15 @@ namespace :export do
   desc "All"
   task :all => :setup do
     %w[
-      earth
-      water
-      fire
-      air
-      void
     ].each do |asset|
-      #puts "rake export:#{asset} > ./export/#{asset}.csv"
       `rake export:#{asset} > ./export/#{asset}.csv`
     end
   end
 
-  desc "Earth"
-  task :earth => :setup do
-    puts Export::Cards.new('earth').to_csv
-  end
-
-  desc "Air"
-  task :air => :setup do
-    puts Export::Cards.new('air').to_csv
-  end
-
-  desc "Water"
-  task :water => :setup do
-    puts Export::Cards.new('water').to_csv
-  end
-
-  desc "fire"
-  task :fire => :setup do
-    puts Export::Cards.new('fire').to_csv
-  end
-
-  desc "void"
-  task :void => :setup do
-    puts Export::Cards.new('void').to_csv
-  end
+  # desc "Asset name"
+  # task :asset_name => :setup do
+    # puts Export::Cards.new('asset_name').to_csv
+  #end
 end
 
 namespace :lint do
@@ -85,51 +61,6 @@ namespace :lint do
     desc "Cards [all]"
     task :all => :load do
       @cards.render
-    end
-
-    desc "Card metrics [duel_type]"
-    task :duel_types => :load do
-      @cards.render(:duel_types)
-    end
-
-    desc "Card names, sorted"
-    task :names => :load do
-      @cards.render(:card_names)
-    end
-
-    desc "Names, grouped"
-    task :tuples => :load do
-      @cards.render(:tuples)
-    end
-
-
-    desc "Card effects, sorted"
-    task :effects => :load do
-      @cards.render(:card_effects)
-    end
-
-    desc "Card names, repeats"
-    task :dupes => :load do
-      @cards.render(:card_dupes)
-    end
-
-    desc "Missing entries"
-    task :missing => :load do
-      @cards.render(:missing_entries)
-    end
-
-    namespace :summary do
-      task :venue => :load do
-        @cards.render(:missing_entries_venue)
-      end
-
-      task :training => :load do
-        @cards.render(:missing_entries_training)
-      end
-
-      task :duel => :load do
-        @cards.render(:missing_entries_duel)
-      end
     end
   end
 end

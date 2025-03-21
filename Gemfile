@@ -10,6 +10,9 @@ gem 'yaml'
 gem 'gzip'
 gem 'tty'
 
+# Allows for rake notes
+gem 'rake-notes'
+
 # For exporting the rules to printable text
 gem 'github-markup'
 gem 'commonmarker'
@@ -21,5 +24,4 @@ gem 'awesome_print'
 gem 'pry-nav'
 gem 'rake'
 gem 'rspec'
-gem 'guard-rspec'
 
